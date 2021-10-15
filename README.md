@@ -47,24 +47,24 @@ Project requirements:
     "ConnectionStrings": {
         "DefaultConnection": "Server=localhost;Port=3306;database=chynna_lew;uid=root;pwd=[YOUR-PASSWORD-HERE];"
     }
-  }.
+  }
   ```
   - replace [YOUR-PASSWORD-HERE] with your unique MySql password
 * Launch the MySql server:
   - In the terminal, run the command "$ mySql -uroot -p[YOUR-PASSWORD-HERE]", replacing [YOUR-PASSWORD-HERE] with your unique MySql password
 * To Import the required database:
-  - In the terminal, navigate to Factory.Solution/Factory
-  - run the command "dotnet ef migrations add Initial"
-  - run the command "dotnet ef database update"
+  - In the terminal, navigate to Factory.Solution/Factory and run the command:
+    - dotnet ef database update
 * To Make Changes to the Database:
   - If you would like to change the database, make changes in the proper models files, then run the following commands in the terminal navigated to Factory.Solution/Factory:
-    - "dotnet ef migrations add Initial"
+    - "dotnet ef migrations add YourDescriptionHere"
     - "dotnet ef database update"
 * To Restore, build, and run the project:
   - Navigate to the Factory.Solution/Factory folder in the command line or terminal
     - Run the command "$ dotnet restore" to restore the project dependencies
     - Run the command "$ dotnet build" to build and compile the project
     - Run the command "$ dotnet run" to build and compile the project
+    - If the styling is not appearing in the browser, open http://localhost:5000 in an incognito browser
 
 ## Known Bugs
 
