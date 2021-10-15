@@ -64,5 +64,19 @@ namespace Factory.Controllers
       }
       return RedirectToAction("AddEngineer");
     }
+
+    public ActionResult Edit(int id)
+    {
+      var model = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
+      return View(model);
+    }
+
+    [HttpPost]
+    public ActionResult Edit(Machine machine)
+    {
+      _db.Entry(machine).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }

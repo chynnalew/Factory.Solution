@@ -24,12 +24,12 @@ else
         <td>
           @Html.ActionLink($"{join.Engineer.EngineerName}", "Details", "Engineers", new{id = join.Engineer.EngineerId})
         </td>
-        <td>
+        <td style="width:10%">
           @using (Html.BeginForm("DeleteEngineer", "Courses"))
           {
             @Html.Hidden("joinId", @join.EngineerMachinesId)
             @Html.Hidden("id", @Model.MachineId)
-            <input type="submit" value="Remove Engineer"/>
+            <input type="submit" value="Remove Engineer"class="btn btn-warning"/>
           }
         </td>
       </tr>
@@ -38,3 +38,4 @@ else
 }
 <br>
 <h4>@Html.ActionLink("Add an Engineer", "AddEngineer", new{id = Model.MachineId})</h4>
+<h4>@Html.ActionLink("Edit Machine Details", "Edit", new{id = Model.MachineId})</h4>
