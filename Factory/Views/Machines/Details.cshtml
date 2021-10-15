@@ -25,7 +25,7 @@ else
           @Html.ActionLink($"{join.Engineer.EngineerName}", "Details", "Engineers", new{id = join.Engineer.EngineerId})
         </td>
         <td style="width:10%">
-          @using (Html.BeginForm("DeleteEngineer", "Courses"))
+          @using (Html.BeginForm("DeleteEngineer", "Machines"))
           {
             @Html.Hidden("joinId", @join.EngineerMachinesId)
             @Html.Hidden("id", @Model.MachineId)
