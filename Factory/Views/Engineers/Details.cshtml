@@ -21,15 +21,15 @@ else
     @foreach(var join in Model.JoinEntities)
     {
       <tr>
-        <td>
+        <td style="width:90%">
           @Html.ActionLink($"{join.Machine.MachineName}", "Details", "Machines", new{id = join.Machine.MachineId})
         </td>
-        <td>
+        <td style="width:10%">
           @using (Html.BeginForm("DeleteMachine", "Machine"))
           {
             @Html.Hidden("joinId", @join.EngineerMachinesId)
             @Html.Hidden("id", @Model.EngineerId)
-            <input type="submit" value="Remove Machine"/>
+            <input type="submit" value="Remove Machine" class="btn btn-warning"/>
           }
         </td>
       </tr>
