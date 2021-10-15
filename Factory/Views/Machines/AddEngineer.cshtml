@@ -1,0 +1,30 @@
+@{
+  Layout="_Layout";
+}
+
+@model Factory.Models.Machine
+
+<div class="card">
+  <h1>@Model.MachineName : Assign an Engineer</h1>
+
+  @using (Html.BeginForm())
+  {
+    @Html.HiddenFor(model => model.MachineId)
+    @Html.Label("Add an Engineer")
+    <br>
+    @Html.DropDownList("EngineerId")
+    <br>
+    <br>
+    <input type="submit" value="Assign Engineer" class="btn btn-danger"/>
+  }
+</div>
+<br>
+<h3>Assigned Engineers:</h3>
+@foreach(var join in Model.JoinEntities)
+{
+  <p>
+    @join.Engineer.EngineerName
+  </p>  
+}
+<br>
+<p>@Html.ActionLink("Return to Machine Page", "Details", "Machines", new{id = @Model.MachineId})</p>
