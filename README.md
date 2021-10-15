@@ -34,8 +34,8 @@ Project requirements:
 ### Installation
 
 * Clone [this](https://github.com/chynnalew/Factory.Solution) repository, or download and open the Zip on your local machine
-* Open the Factory.Solutions folder in your preferred text editor
-* To install required packages, navigate to Factory.Solutions/Factory in the terminal and type the following commands:
+* Open the Factory.Solution folder in your preferred text editor
+* To install required packages, navigate to Factory.Solution/Factory in the terminal and type the following commands:
   - dotnet add package Microsoft.EntityFrameworkCore -v 5.0.0
   - dotnet add package Pomelo.EntityFrameworkCore.MySql -v 5.0.0-alpha.2
   - dotnet add package Microsoft.EntityFrameworkCore.Proxies -v 5.0.0
@@ -53,17 +53,15 @@ Project requirements:
 * Launch the MySql server:
   - In the terminal, run the command "$ mySql -uroot -p[YOUR-PASSWORD-HERE]", replacing [YOUR-PASSWORD-HERE] with your unique MySql password
 * To Import the required database:
-  - Open MySql Workbench
-  - Select your preferred server(default is root)
-  - In the "Navigator > Administration" window, select "Data Import/ Restore"
-  - In "Import Options", select "Import From Self-Contained File"
-  - Navigate to "Factory.Solutions/chynna_lew.sql" in the search input
-  - Under "Default Schema to be Imported to" select the "New" button
-  - Enter "chynna_lew" and click "OK"
-  - Navigate to the "Import Progress" tab and click "Start Import" in the bottom right corner of the window
-  - Reopen the "Navigator>Schemas" tab, Right click and select "refresh all" to see the imported database
+  - In the terminal, navigate to Factory.Solution/Factory
+  - run the command "dotnet ef migrations add Initial"
+  - run the command "dotnet ef database update"
+* To Make Changes to the Database:
+  - If you would like to change the database, make changes in the proper models files, then run the following commands in the terminal navigated to Factory.Solution/Factory:
+    - "dotnet ef migrations add Initial"
+    - "dotnet ef database update"
 * To Restore, build, and run the project:
-  - Navigate to the Factory.Solutions/Factory folder in the command line or terminal
+  - Navigate to the Factory.Solution/Factory folder in the command line or terminal
     - Run the command "$ dotnet restore" to restore the project dependencies
     - Run the command "$ dotnet build" to build and compile the project
     - Run the command "$ dotnet run" to build and compile the project
