@@ -16,7 +16,12 @@
 
 ## Description
 
-This application was created to show
+This application was created to show proficiency in ASP.Net Core MVC many-to-may relationships using mySql, Entity, and Razor. This app allows the user to manage their engineers and the machines they are licensed to fix.
+Project requirements:
+- create a many to many relationship between engineers and machines
+- allow the user to see the relationship from both the engineer page and the machines page
+- create a splash page that lists all engineers and machines
+- build out full CRUD functionality for at least one of the classes
 
 ## Setup and Usage Instructions
 
