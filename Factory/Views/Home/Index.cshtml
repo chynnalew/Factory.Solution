@@ -12,37 +12,42 @@
 }
 else
 {
-  <table class="table1">
-    <thead>
-      <tr>
-          <th>Current Machines</th>
-      </tr>
-    </thead>
-    <tbody>
-      @foreach(var machine in Model.Machine)
-      {
-      <tr>
-          <td>@Html.ActionLink($"{machine.MachineName}", "Details", "Machines", new{id = machine.MachineId})</td>
-      </tr>
-      }
-    </tbody>
-  </table>
-
-  <table class="table2">
-    <thead>
-      <tr>
-          <th>Current Engineers</th>
-      </tr>
-    </thead>
-    <tbody>
-      @foreach(var engineer in Model.Engineer)
-      {
-      <tr>
-          <td>@Html.ActionLink($"{engineer.EngineerName}", "Details", "Engineers", new{id = engineer.EngineerId})</td>
-      </tr>
-      }
-    </tbody>
-  </table>
+  <div class="row">
+    <div class="col-6">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+              <th>Current Machines</th>
+          </tr>
+        </thead>
+        <tbody>
+          @foreach(var machine in Model.Machine)
+          {
+          <tr>
+              <td class="items">@Html.ActionLink($"{machine.MachineName}", "Details", "Machines", new{id = machine.MachineId, @class="items"})</td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+    <div class="col-6">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+              <th>Current Engineers</th>
+          </tr>
+        </thead>
+        <tbody>
+          @foreach(var engineer in Model.Engineer)
+          {
+          <tr>
+              <td class="items">@Html.ActionLink($"{engineer.EngineerName}", "Details", "Engineers", new{id = engineer.EngineerId, @class="items"})</td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
 }
 <br>
 <h4>@Html.ActionLink("View All Machines", "Index", "Machines")</h4>

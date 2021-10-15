@@ -11,11 +11,18 @@
 {
   <p>No machines logged. Please add an engineer.</p>
 }
-
-@foreach(Machine machine in Model)
-{
-  @Html.ActionLink($"{machine.MachineName}", "Details", new{id = machine.MachineId})
-}
+<div class="items">
+  <table class="table table-bordered table-striped">
+    @foreach(Machine machine in Model)
+    {
+      <tr>
+        <td>
+          @Html.ActionLink($"{machine.MachineName}", "Details", new{ id = machine.MachineId})
+        </td>
+      </tr>
+    }
+  </table>
+</div>
 <br>
 <h4>@Html.ActionLink("Add and Machine", "Create")</h4>
 <h4>@Html.ActionLink("Return Home", "Index", "Home")</h4>

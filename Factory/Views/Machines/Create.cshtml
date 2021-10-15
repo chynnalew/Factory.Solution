@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Machine;
+
+<h1>Add an Machine</h1>
+@using(Html.BeginForm())
+{
+  @Html.TextBoxFor(model => model.MachineName, new{@class = "form-control", placeholder = "Enter the Machine name Here", required = "required"})
+  <br>
+  @Html.TextBoxFor(model => model.Description, new{@class = "form-control", placeholder = "Enter a Description Here", required = "required"})
+  <br>
+  <input type="submit" value="Add Machine" class="btn btn-danger"/>
+}
+<br>
+<h4>@Html.ActionLink("Return to Machines", "Index")</h4>
+<br>
+<h4>@Html.ActionLink("Return Home", "Index", "Home")</h4>

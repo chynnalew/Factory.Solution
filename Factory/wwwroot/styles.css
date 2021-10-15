@@ -41,3 +41,12 @@ header{
   margin-top: 165px;
   text-align: center;
 }
+.items a{
+  color: rgb(230, 133, 7);
+  font-size: 15pt;
+  font-weight: bold;
+}
+.table{
+  font-size: 15pt;
+  width: 100%;
+}

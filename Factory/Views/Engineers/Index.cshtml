@@ -11,11 +11,18 @@
 {
   <p>No engineers logged. Please add an engineer.</p>
 }
-
-@foreach(Engineer engineer in Model)
-{
-  @Html.ActionLink($"{engineer.EngineerName}", "Details", new{id = engineer.EngineerId})
-}
+<div class="items">
+ <table class="table table-bordered table-striped">
+    @foreach(Engineer engineer in Model)
+    {
+      <tr>
+        <td>
+          @Html.ActionLink($"{engineer.EngineerName}", "Details", new{id = engineer.EngineerId})
+        </td>
+      </tr>
+    }
+  </table>
+</div>
 <br>
 <h4>@Html.ActionLink("Add and Engineer", "Create")</h4>
 <h4>@Html.ActionLink("Return Home", "Index", "Home")</h4>
