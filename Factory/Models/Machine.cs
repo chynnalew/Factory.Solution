@@ -2,15 +2,15 @@ using System.Collections.Generic;
 
 namespace Factory.Models
 {
-  public class Engineer
+  public class Machine
   {
-    public Engineer()
+    public Machine()
     {
       this.JoinEntities = new HashSet<EngineerMachines>();
     }
 
-    public int EngineerId {get; set;}
-    public string EngineerName {get; set;}
+    public int MachineId {get; set;}
+    public string MachineName {get; set;}
     public string Description {get; set;}
 
     public virtual ICollection<EngineerMachines> JoinEntities {get;}
