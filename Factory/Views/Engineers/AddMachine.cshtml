@@ -20,11 +20,23 @@
 </div>
 <br>
 <h3>Current Machine Assignments:</h3>
-@foreach(var join in Model.JoinEntities)
-{
-  <p>
-    @join.Machine.MachineName
-  </p>
-}
+<table class="table2 table-bordered table-striped">
+    @foreach(var join in Model.JoinEntities)
+    {
+      <tr>
+        <td style="width:90%">
+          @Html.ActionLink($"{join.Machine.MachineName}", "Details", "Machines", new{id = join.Machine.MachineId})
+        </td>
+        <td style="width:10%">
+          @using (Html.BeginForm("DeleteMachine", "Engineers"))
+          {
+            @Html.Hidden("joinId", @join.EngineerMachinesId)
+            @Html.Hidden("id", @Model.EngineerId)
+            <input type="submit" value="Remove Machine" class="btn btn-warning"/>
+          }
+        </td>
+      </tr>
+    }
+  </table>
 <br>
-<h4>@Html.ActionLink("Return to Engineer Page", "Details", "Engineers", new{id = @Model.EngineerId})</h4>
+<h4 class="h4">@Html.ActionLink("Return to Engineer Page", "Details", "Engineers", new{id = @Model.EngineerId})</h4>

@@ -5,6 +5,7 @@
 @using Factory.Models;
 @model dynamic;
 
+<h1>MACHINE REPAIRS</h1>
 @if(@Model.Engineer.Count == 0 && @Model.Machine.Count == 0)
 {
   <br>
@@ -50,6 +51,6 @@ else
   </div>
 }
 <br>
-<h4>@Html.ActionLink("View All Machines", "Index", "Machines")</h4>
+<h4 class="h4">@Html.ActionLink("View All Machines", "Index", "Machines")</h4>
 <br>
-<h4>@Html.ActionLink("View All Engineers", "Index", "Engineers")</h4>
+<h4 class="h4">@Html.ActionLink("View All Engineers", "Index", "Engineers")</h4>

@@ -12,6 +12,7 @@ header{
   color: white;
   padding: 20px;
   font-family: 'Fjalla One', sans-serif;
+  text-shadow: 0px 0px 20px rgb(241, 237, 227);
 }
 .links{
   position:fixed;
@@ -29,7 +30,7 @@ header{
   right: 20px;
 }
 .links a{
-  color: rgb(230, 133, 7);
+  color:rgb(255, 94, 20);
   font-size: 15pt;
 }
 .links a:hover{
@@ -73,4 +74,12 @@ header{
 .table2 a{
   color: rgb(248, 212, 93);
   font-size: 16pt;
+}
+.h4 a{
+  color:rgb(255, 94, 20);
+}
+.h4 a:hover{
+  color:rgb(250, 95, 56);
+  text-shadow: 0px 0px 10px rgb(255, 166, 2);
+  text-decoration: none;
 }

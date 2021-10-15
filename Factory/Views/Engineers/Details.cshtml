@@ -9,7 +9,7 @@
   <h3 class="titles">@Html.DisplayFor(model => model.EngineerName)</h3>
   <p>@Html.DisplayNameFor(model => model.Description):<br> @Html.DisplayFor(model => model.Description)</p>
 </div>
-
+<br>
 <h3>Current Machine Assignements</h3>
 @if(@Model.JoinEntities.Count == 0)
 {
@@ -37,7 +37,8 @@ else
   </table>
 }
 <br>
-<h4>@Html.ActionLink("Add a Machine Assignment", "AddMachine", new{id = Model.EngineerId})</h4>
-<h4>@Html.ActionLink("Edit Engineer Details", "Edit", new{id = Model.EngineerId})</h4>
 <br>
-<h4>@Html.ActionLink("Delete Engineer", "Delete", new{id = Model.EngineerId})</h4>
+<h4 class="h4">@Html.ActionLink("Add a Machine Assignment", "AddMachine", new{id = Model.EngineerId})</h4>
+<h4 class="h4">@Html.ActionLink("Edit Engineer Details", "Edit", new{id = Model.EngineerId})</h4>
+<br>
+<h4 class="h4">@Html.ActionLink("Delete Engineer", "Delete", new{id = Model.EngineerId})</h4>
