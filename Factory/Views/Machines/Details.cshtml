@@ -1,0 +1,40 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Machine;
+
+<h1>Machine Details</h1>
+<div class="card">
+  <h3 class="titles">@Html.DisplayFor(model => model.MachineName)</h3>
+  <p>@Html.DisplayNameFor(model => model.Description):<br> @Html.DisplayFor(model => model.Description)</p>
+</div>
+
+<h3>Assigned Engineers</h3>
+@if(@Model.JoinEntities.Count == 0)
+{
+  <p>No Engineers Assigned</p>
+}
+else 
+{
+  <table>
+    @foreach(var join in Model.JoinEntities)
+    {
+      <tr>
+        <td>
+          @Html.ActionLink($"{join.Engineer.EngineerName}", "Details", "Engineers", new{id = join.Engineer.EngineerId})
+        </td>
+        <td>
+          @using (Html.BeginForm("DeleteEngineer", "Courses"))
+          {
+            @Html.Hidden("joinId", @join.EngineerMachinesId)
+            @Html.Hidden("id", @Model.MachineId)
+            <input type="submit" value="Remove Engineer"/>
+          }
+        </td>
+      </tr>
+    }
+  </table>
+}
+<br>
+<h4>@Html.ActionLink("Add an Engineer", "AddEngineer", new{id = Model.MachineId})</h4>

@@ -50,3 +50,15 @@ header{
   font-size: 15pt;
   width: 100%;
 }
+.card{
+  padding: 20px;
+  background-color: rgb(228, 227, 227);
+  margin: 10px;
+  border-radius: 0;
+}
+.titles{
+  font-family: 'Fjalla One', sans-serif;
+  color: rgb(230, 133, 7);
+  text-transform: uppercase;
+  font-size: 30pt;
+}
